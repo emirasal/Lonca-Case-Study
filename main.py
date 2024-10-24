@@ -2,8 +2,12 @@ from pymongo import MongoClient
 import xml.etree.ElementTree as ET
 from product import Product
 
+from pymongo import MongoClient
+from dotenv import load_dotenv
 
-client = MongoClient("mongodb+srv://dbUser:dbUserPassword@cluster0.l16sj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+load_dotenv()
+
+client = MongoClient(mongo_uri)
 
 db = client['product_db']  
 collection = db['products'] 
